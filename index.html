@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management Ssystem</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="w-75 mx-auto py-5 text-center MainText " >
+        <h1 class=" mb-5 pb-2 " >Product Management System</h1>
+
+        <!-- Button to open modal for adding a product -->
+        <button type="button" class="btn btn-primary p-3 bg-gradient" data-toggle="modal" data-target="#productModal">
+            Add Product
+        </button>
+
+        <!-- Modal for adding/updating products -->
+        <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalLabel">New Product</h5>
+                        <button type="button" class="close btn btn-danger" data-dismiss="modal" >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="productForm">
+                            <div class="form-group">
+                                <label for="productName" class="col-form-label">Product Name:</label>
+                                <input type="text" class="form-control" id="productName">
+                            </div>
+                            <div class="form-group">
+                                <label for="productPrice" class="col-form-label">Product Price:</label>
+                                <input type="number" class="form-control" id="productPrice">
+                            </div>
+                            <div class="form-group">
+                                <label for="productCat" class="col-form-label">Product Category:</label>
+                                <input type="text" class="form-control" id="productCat">
+                            </div>
+                            <div class="form-group">
+                                <label for="productDesc" class="col-form-label">Product Description:</label>
+                                <input type="text" class="form-control" id="productDesc">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveProductBtn">Save Product</button>
+                        <button type="button" class="btn btn-warning d-none" id="updateProductBtn">Update Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and product table -->
+        <div class="w-100 col-md-12 mx-auto mt-5 ">
+            <h4>Search</h4>
+            <input type="text" oninput="search()" id="inputSearch" class="form-control mb-5">
+
+            <table class="table col-md-12 ">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Product Category</th>
+                        <th>Product Description</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="productData"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

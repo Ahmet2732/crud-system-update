@@ -1,0 +1,25 @@
+
+
+
+ .MainText h1{
+    color: blue ;
+
+
+ 
+
+}
+#productModal h5{
+    color:blue;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+p {
+    font-size: 20px;
+}
+
+p::selection {
+    background-color: teal;
+    color: white;
+}
